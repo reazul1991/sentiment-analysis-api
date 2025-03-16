@@ -4,7 +4,7 @@ import torch
 from transformers import RobertaForSequenceClassification, RobertaTokenizer
 
 # ✅ Load model & tokenizer
-model_path = "/content/drive/MyDrive/saved_model"
+model_path = "reazul614/sentiment-analysis-model"
 model = RobertaForSequenceClassification.from_pretrained(model_path)
 tokenizer = RobertaTokenizer.from_pretrained(model_path)
 
@@ -36,12 +36,3 @@ def get_sentiment(input_data: TextInput):
     prediction = predict_sentiment(input_data.text)
     return prediction
 
-from transformers import RobertaForSequenceClassification, RobertaTokenizer
-
-# ✅ Load model & tokenizer from Hugging Face
-MODEL_PATH = "reazul614/sentiment-analysis-model"
-
-model = RobertaForSequenceClassification.from_pretrained(MODEL_PATH)
-tokenizer = RobertaTokenizer.from_pretrained(MODEL_PATH)
-
-print(f"✅ Model loaded successfully from Hugging Face: {MODEL_PATH}")
