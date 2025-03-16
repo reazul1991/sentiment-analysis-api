@@ -16,7 +16,8 @@ class TextInput(BaseModel):
     text: str
 
 # ✅ Add a Homepage Route
-@app.get("/")
+@app.get("/", include_in_schema=False)
+@app.head("/", include_in_schema=False)
 def home():
     return {"message": "🚀 Sentiment Analysis API is live! Use /predict/ to analyze text."}
 
