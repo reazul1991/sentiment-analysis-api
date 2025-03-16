@@ -15,6 +15,11 @@ app = FastAPI()
 class TextInput(BaseModel):
     text: str
 
+# ✅ Add a Homepage Route
+@app.get("/")
+def home():
+    return {"message": "🚀 Sentiment Analysis API is live! Use /predict/ to analyze text."}
+
 # Prediction function
 def predict_sentiment(text):
     try:
