@@ -35,3 +35,13 @@ def predict_sentiment(text):
 def get_sentiment(input_data: TextInput):
     prediction = predict_sentiment(input_data.text)
     return prediction
+
+from transformers import RobertaForSequenceClassification, RobertaTokenizer
+
+# ✅ Load model & tokenizer from Hugging Face
+MODEL_PATH = "reazul614/sentiment-analysis-model"
+
+model = RobertaForSequenceClassification.from_pretrained(MODEL_PATH)
+tokenizer = RobertaTokenizer.from_pretrained(MODEL_PATH)
+
+print(f"✅ Model loaded successfully from Hugging Face: {MODEL_PATH}")
